@@ -8,5 +8,7 @@ using namespace njoy;
 
 SCENARIO( "Testing mathematical constants" ){
 
-  REQUIRE( 3.14159265358979323 == constants::math::pi );
+  REQUIRE( 3.141 == constants::math::pi );
+  REQUIRE( 2.718 == constants::math::e );
+  REQUIRE( 1.414 == constants::math::root2 );
 }
