@@ -1,4 +1,6 @@
-r constants
+[![Build Status](http://jenkins.njoy21.io:8080/buildStatus/icon?job=constants)](http://jenkins.njoy21.io:8080/job/constants/)
+
+# constants
 This repository contains a collection of mathematical and physical constants. 
 
 **Note:** For the constants given here, their values are actually given in three places in this repository:
