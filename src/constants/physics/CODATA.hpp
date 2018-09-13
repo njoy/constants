@@ -8,10 +8,15 @@ namespace njoy{
 namespace constants{
 namespace physics{
 
-struct SpeedOfLight: hana::type< SpeedOfLight >{};
-static constexpr SpeedOfLight speedOfLight{};
-struct C: hana::type< C >{};
-static constexpr C c{};
+#define CONSTANT_TYPE( NAME ) \
+ \
+  struct NAME##_t : hana::type< NAME##_t >{}; \
+  static constexpr NAME##_t NAME{}; \
+
+CONSTANT_TYPE( speedOfLight );
+CONSTANT_TYPE( c );
+
+#undef CONSTANT_TYPE
 
 }
 } // namespace constants
