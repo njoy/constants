@@ -1,6 +1,12 @@
 # constants
 This repository contains a collection of mathematical and physical constants. 
 
+**Note:** For the mathematical constants, their values are actually given in three places in this repository:
+
+1. Here in the `README.md` file,
+2. In the header file that defines the value for C++, and
+3. In the files used to test/verify the values.
+While every effort is made to ensure that each of these values are the same, inconsistencies may appear. If discovered, please [file an issue](https://github.com/njoy/constants/issues).
 
 ## Mathematical Constants
 The (short) list of mathematical constants was taken from [Wikipedia:Mathematical constant](https://en.wikipedia.org/wiki/Mathematical_constant). While there are many more constants given there, we have limited this initially to the [Basic mathematical constants](https://en.wikipedia.org/wiki/Mathematical_constant#Basic_mathematical_constants).
@@ -11,12 +17,6 @@ The (short) list of mathematical constants was taken from [Wikipedia:Mathematica
   | Euler's number (e)        | `e`           | `2.718281828459045` | [http://mathworld.wolfram.com/e.html]()                   | 2018-09-13     | 
   | Pythagoras' constant (√2) | `root2`       | `1.414213562373095` | [http://mathworld.wolfram.com/PythagorassConstant.html]() | 2018-09-13     | 
 
-**Note:** For the mathematical constants, their values are actually given in three places in this repository:
-
-1. Here in the `README.md` file,
-2. In the header file that defines the value for C++, and
-3. In the `math.test.cpp` file used to test/verify the values.
-While every effort is made to ensure that each of these values are the same, inconsistencies may appear. If discovered, please [file an issue](https://github.com/njoy/constants/issues).
 
 ### Using mathematical constants
 Here is an example of how the mathematical constants can be used.

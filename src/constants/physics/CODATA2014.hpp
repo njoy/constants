@@ -7,6 +7,11 @@ namespace njoy{
 namespace constants{
 namespace physics{
 
+auto CODATA2014 = hana::make_map(
+  hana::make_pair( speedOfLight, 299792458*meter/second ),
+  hana::make_pair( c, 299792458*meter/second )
+);
+
 }
 } // namespace constants
 } // namespace njoy
