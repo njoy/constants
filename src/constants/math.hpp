@@ -4,7 +4,10 @@ namespace njoy{
 namespace constants{
 namespace math{
 
-static constexpr double pi = 3.14159265358979323;
+static constexpr double pi{ 3.141592653589793 };
+static constexpr double e { 2.718281828459045 };
+static constexpr double root2{ 1.414213562373095 };
+
 }
 } // namespace constants
 } // namespace njoy
