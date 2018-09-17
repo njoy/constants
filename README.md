@@ -1,3 +1,5 @@
+[![Build Status](http://jenkins.njoy21.io:8080/buildStatus/icon?job=constants)](http://jenkins.njoy21.io:8080/job/constants/)
+
 # constants
 This repository contains a collection of [mathematical](src/constants/math/README.md) and [physical](src/constants/physics/README.md) constants. Additional information about the constants provided&mdash;and their values&mdash; see the associated README files.
 
