@@ -1,5 +1,5 @@
 # CODATA2014
-The raw data for this is contained in [CODATA2014.txt]() which was downloaded from [https://physics.nist.gov/cuu/Constants/Table/allascii.txt](https://physics.nist.gov/cuu/Constants/Table/allascii.txt) on 2018-09-13.
+The raw data for this is contained in [CODATA2014.txt](CODATA2014.txt) which was downloaded from [https://physics.nist.gov/cuu/Constants/Table/allascii.txt](https://physics.nist.gov/cuu/Constants/Table/allascii.txt) on 2018-09-13.
 
 ## Constants
   | Quantity                   | Variable name  | Value              | Uncertainty        | Unit   | 
