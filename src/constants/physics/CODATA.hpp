@@ -15,12 +15,18 @@ namespace physics{
 
 CONSTANT_TYPE( avogadro );
 CONSTANT_TYPE( boltzmann );
+CONSTANT_TYPE( G );
+CONSTANT_TYPE( elementaryCharge );
+CONSTANT_TYPE( newtonianGravitation );
 CONSTANT_TYPE( k );
 CONSTANT_TYPE( planck );
 CONSTANT_TYPE( h );
 CONSTANT_TYPE( hbar );
+CONSTANT_TYPE( reducedPlanck );
 CONSTANT_TYPE( speedOfLight );
 CONSTANT_TYPE( c );
+
+CONSTANT_TYPE( a );
 
 CONSTANT_TYPE( electronMass );
 CONSTANT_TYPE( neutronMass );
