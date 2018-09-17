@@ -13,8 +13,22 @@ namespace physics{
   struct NAME##_t : hana::type< NAME##_t >{}; \
   static constexpr NAME##_t NAME{}; \
 
+CONSTANT_TYPE( avogadro );
+CONSTANT_TYPE( boltzmann );
+CONSTANT_TYPE( k );
+CONSTANT_TYPE( planck );
+CONSTANT_TYPE( h );
+CONSTANT_TYPE( hbar );
 CONSTANT_TYPE( speedOfLight );
 CONSTANT_TYPE( c );
+
+CONSTANT_TYPE( electronMass );
+CONSTANT_TYPE( neutronMass );
+CONSTANT_TYPE( protonMass );
+CONSTANT_TYPE( deuteronMass );
+CONSTANT_TYPE( helionMass );
+CONSTANT_TYPE( tritonMass );
+CONSTANT_TYPE( alphaMass );
 
 #undef CONSTANT_TYPE
 

@@ -1,15 +1,15 @@
 # constants
-This repository contains a collection of mathematical and physical constants. Additional information about the constants provided&mdash;and their values&mdash; see the associated README files.
+This repository contains a collection of [mathematical](src/constants/math/README.md) and [physical](src/constants/physics/README.md) constants. Additional information about the constants provided&mdash;and their values&mdash; see the associated README files.
 
 **Note:** For the mathematical constants, their values are actually given in three places in this repository:
 
-1. Here in the `README.md` file,
-2. In the header file that defines the value for C++, and
-3. In the files used to test/verify the values.
+1. in the associated `README.md` files;
+2. in the header file that defines the value for C++; and
+3. in the files used to test/verify the values.
 While every effort is made to ensure that each of these values are the same, inconsistencies may appear. If discovered, please [file an issue](https://github.com/njoy/constants/issues).
 
 
-### Using mathematical constants
+### Using the constants
 Here is an example of how the mathematical constants can be used.
 ```cpp
 #include "constants/math.hpp"
