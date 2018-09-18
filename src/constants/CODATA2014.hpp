@@ -1,12 +1,6 @@
 #ifndef NJOY_CONSTANTS_PHYSICS_CODATA2014_HPP
 #define NJOY_CONSTANTS_PHYSICS_CODATA2014_HPP
 
-#include "constants/physics/CODATA.hpp"
-
-namespace njoy{
-namespace constants{
-namespace physics{
-
 struct PlanckLength : hana::type< PlanckLength >{
   template< typename MAP >
   constexpr decltype( auto ) operator()( MAP map ) const {
@@ -83,7 +77,4 @@ constexpr auto CODATA2014Uncertainty = hana::make_map(
   hana::make_pair( alphaMass    , 0.000000082e-27*kilo( gram ) )
 );
 
-}
-} // namespace constants
-} // namespace njoy
 #endif  // NJOY_CONSTANTS_PHYSICS_CODATA2014_HPP

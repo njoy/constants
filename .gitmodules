@@ -4,3 +4,6 @@
 [submodule "dependencies/dimwits"]
 	path = dependencies/dimwits
 	url = https://github.com/njoy/DimensionalAnalysis.git
+[submodule "dependencies/range-v3-adapter"]
+	path = dependencies/range-v3-adapter
+	url = https://github.com/njoy/range-v3-adapter.git

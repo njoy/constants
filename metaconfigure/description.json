@@ -574,10 +574,11 @@
   },
   "header files": [
     "src/constants.hpp",
+    "src/constants/CODATA2014.hpp",
     "src/constants/math.hpp",
     "src/constants/physics.hpp",
-    "src/constants/physics/CODATA.hpp",
-    "src/constants/physics/CODATA2014.hpp"
+    "src/constants/tags.hpp",
+    "src/constants/testing.hpp"
   ],
   "ignore pattern": "$^",
   "implementation files": [],
@@ -595,11 +596,11 @@
   "strict": true,
   "test pattern": "test$",
   "tests": {
+    "constants.CODATA2014": [
+      "src/constants/CODATA2014/test/CODATA2014.test.cpp"
+    ],
     "constants.math": [
       "src/constants/math/test/math.test.cpp"
-    ],
-    "constants.physics.CODATA2014": [
-      "src/constants/physics/CODATA2014/test/CODATA2014.test.cpp"
     ]
   },
   "update": true
