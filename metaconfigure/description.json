@@ -577,8 +577,7 @@
     "src/constants/CODATA2014.hpp",
     "src/constants/math.hpp",
     "src/constants/physics.hpp",
-    "src/constants/tags.hpp",
-    "src/constants/testing.hpp"
+    "src/constants/tags.hpp"
   ],
   "ignore pattern": "$^",
   "implementation files": [],

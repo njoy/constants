@@ -14,4 +14,8 @@ $<$<BOOL:${nonportable_optimization}>:${${PREFIX}_nonportable_optimization_flags
 
 ${CXX_appended_flags} ${constants_appended_flags} )
 target_link_libraries( constants.test PUBLIC constants ) 
+file( GLOB resources "resources/*" )
+foreach( resource ${resources})
+    file( COPY "${resource}" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}" )
+endforeach()
 add_test( NAME constants COMMAND constants.test )
