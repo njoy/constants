@@ -596,11 +596,10 @@
   "strict": true,
   "test pattern": "test$",
   "tests": {
-    "constants.CODATA2014": [
-      "src/constants/CODATA2014/test/CODATA2014.test.cpp"
-    ],
-    "constants.math": [
-      "src/constants/math/test/math.test.cpp"
+    "constants": [
+      "src/constants/test/CODATA2014.test.cpp",
+      "src/constants/test/constants.test.cpp",
+      "src/constants/test/math.test.cpp"
     ]
   },
   "update": true
