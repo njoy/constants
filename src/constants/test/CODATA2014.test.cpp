@@ -10,11 +10,12 @@
 
 using namespace dimwits;
 
-SCENARIO("test all the constants"){
-  auto CODATA = CODATA2014;
-  auto referenceValues = defineReferenceValues( std::ifstream("CODATA2014.txt") );
+template< typename MAP >
+void checkMap( MAP& map ){
+  auto referenceValues = 
+      defineReferenceValues( std::ifstream("CODATA2014.txt") );
 
-  hana::for_each( hana::keys( CODATA ), [&]( auto&& key ){
+  hana::for_each( hana::keys( map ), [&]( auto&& key ){
     auto refKey = stringFor[ key ];
 
     GIVEN( "constant: " + refKey ){
@@ -25,10 +26,34 @@ SCENARIO("test all the constants"){
         return hana::overload(
           []( hana::true_ ){ return true; },
           [&]( auto value ){ return reference.second == value.value; } 
-        )( hana::find( CODATA.uncertainty, key ).value_or( hana::true_c ) );
+        )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
-      CHECK( fabs( 1 - (reference.first/CODATA[ key ].value ) ) < 5E-10 );
+      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 5E-10 );
       CHECK( verifyIfExists( key ) );
     }
   });
+}
+
+SCENARIO("test all the constants"){
+
+  checkMap( CODATA2014 );
+
+  auto aliasMap = addUncertainty(
+    hana::make_map(
+      hana::make_pair( k, CODATA2014[ k ] ),
+      hana::make_pair( h, CODATA2014[ h ] ),
+      hana::make_pair( G, CODATA2014[ G ] ),
+      hana::make_pair( c, CODATA2014[ c ] )
+    ),
+
+    // Uncertainties
+    hana::make_map(
+      hana::make_pair( k, CODATA2014.uncertainty[ k ] ),
+      hana::make_pair( h, CODATA2014.uncertainty[ h ] ),
+      hana::make_pair( G, CODATA2014.uncertainty[ G ] ),
+      hana::make_pair( c, CODATA2014.uncertainty[ c ] )
+    )
+  );
+
+  checkMap( aliasMap );
 }
