@@ -575,9 +575,12 @@
   "header files": [
     "src/constants.hpp",
     "src/constants/CODATA2014.hpp",
+    "src/constants/derived.hpp",
     "src/constants/math.hpp",
-    "src/constants/physics.hpp",
-    "src/constants/tags.hpp"
+    "src/constants/tags.hpp",
+    "src/constants/derived/Insert.hpp",
+    "src/constants/derived/PlanckLength.hpp",
+    "src/constants/derived/ReducedPlanck.hpp"
   ],
   "ignore pattern": "$^",
   "implementation files": [],

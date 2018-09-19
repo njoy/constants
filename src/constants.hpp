@@ -12,6 +12,7 @@ namespace constants {
 
 #include "constants/math.hpp"
 #include "constants/tags.hpp"
+#include "constants/derived.hpp"
 #include "constants/CODATA2014.hpp"
 
 } // namespace constants

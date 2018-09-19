@@ -40,8 +40,6 @@ The raw data for this is contained in [CODATA2014.txt](resources/CODATA2014.txt)
 | Newtonian constant of gravitation | `newtonianGravity` | 6.674 08 e-11       | 0.000 31 e-11       | m^3 kg^-1 s^-2 | 
 | Planck constant                   | `planck`           | 6.626 070 040 e-34  | 0.000 000 081 e-34  | J s            | 
 | Planck constant                   | `h`                | 6.626 070 040 e-34  | 0.000 000 081 e-34  | J s            | 
-| Reduced Planck constant           | `reducedPlanck`    | 1.054 571 800 e-34  | 0.000 000 013 e-34  | J s            | 
-| Reduced Planck constant           | `hbar`             | 1.054 571 800 e-34  | 0.000 000 013 e-34  | J s            | 
 | Speed of light in a vacuum        | `c`                | 2.997 924 58  e8    | 0.0                 | m s^-1         | 
 | Speed of light in a vacuum        | `speedOfLight`     | 2.997 924 58  e8    | 0.0                 | m s^-1         | 
 
@@ -56,6 +54,16 @@ The raw data for this is contained in [CODATA2014.txt](resources/CODATA2014.txt)
 | triton mass                       | `tritonMass`       | 5.007 356 665 e-27  | 0.000 000 062 e-27  | kg             | 
 | alpha particle mass               | `alphaMass`        | 6.644 657 230 e-27  | 0.000 000 082 e-27  | kg             | 
 
+
+## Derived Constants
+Some constants are derived from others, but used sufficiently often that it is worth pre-computing the values. Their values are not listed here, but the variable names are.
+
+ | Quanitity      | Value           | Unit | 
+ | ----           | -----           | ---- | 
+ | Reduced Planck | `hbar`          | J s  | 
+ | Reduced Planck | `reducedPlanck` | J s  | 
+
+
 ## Using the constants
 Here is an example of how the mathematical constants can be used.
 ```cpp
@@ -66,12 +74,11 @@ double r{1.0};
 auto area = njoy::constants::pi*r**2;
 
 auto CODATA = njoy::constants::CODATA2014;
-auto CODATAUncertainty = njoy::constants::CODATA2014Uncertainty;
 
 auto c = CODATA[c];
-auto cUncertainty = CODATAUncertainty[c]; // 0.0
-auto hbar = CODATA[Planck];
-auto hbarUncertainty = CODATAUncertainty[Planck];
+auto cUncertainty = CODATA.uncertainty[c]; // 0.0
+auto h = CODATA[Planck];
+auto hUncertainty = CODATA.uncertainty[Planck];
 ```
 
 ## A note on floating point arithmetic 
