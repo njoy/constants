@@ -8,14 +8,14 @@
 
 CONSTANT_TYPE( avogadro );
 CONSTANT_TYPE( boltzmann );
-// CONSTANT_TYPE( k );
+CONSTANT_TYPE( conductanceQuantum );
+// CONSTANT_TYPE( electric );
+CONSTANT_TYPE( electronRadius );
 CONSTANT_TYPE( elementaryCharge );
-// CONSTANT_TYPE( G );
+CONSTANT_TYPE( faraday );
 CONSTANT_TYPE( newtonianGravitation );
 CONSTANT_TYPE( planck );
-// CONSTANT_TYPE( h );
 CONSTANT_TYPE( speedOfLight );
-// CONSTANT_TYPE( c );
 
 CONSTANT_TYPE( electronMass );
 CONSTANT_TYPE( neutronMass );
@@ -32,6 +32,7 @@ CONSTANT_TYPE( alphaMass );
   ALIAS( planck, h );
   ALIAS( newtonianGravitation, G );
   ALIAS( speedOfLight, c );
+  ALIAS( conductanceQuantum, G0 );
 
 #undef ALIAS
 

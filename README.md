@@ -30,18 +30,22 @@ For each CODATA release, we provide two maps; one for the data values and one fo
 The raw data for this is contained in [CODATA2014.txt](resources/CODATA2014.txt) which was downloaded from [https://physics.nist.gov/cuu/Constants/Table/allascii.txt](https://physics.nist.gov/cuu/Constants/Table/allascii.txt) on 2018-09-13.
 
 #### Constants
-| Quantity                          | Variable name      | Value               | Uncertainty         | Unit           | 
-| --------                          | -------------      | ----                | ------              | ------         | 
-| Avogadro constant                 | `avogadro`         | 6.022 140 857 e23   | 0.000 000 074 e23   | mol^-1         | 
-| Boltzmann constant                | `boltzmann`        | 1.380 648 52  e-23  | 0.000 000 79  e-23  | J K^-1         | 
-| Boltzmann constant                | `k`                | 1.380 648 52  e-23  | 0.000 000 79  e-23  | J K^-1         | 
-| Elementary charge                 | `elementaryCharge` | 1.602 176 6208 e-19 | 0.000 000 0098 e-19 | C              | 
-| Newtonian constant of gravitation | `G`                | 6.674 08 e-11       | 0.000 31 e-11       | m^3 kg^-1 s^-2 | 
-| Newtonian constant of gravitation | `newtonianGravity` | 6.674 08 e-11       | 0.000 31 e-11       | m^3 kg^-1 s^-2 | 
-| Planck constant                   | `planck`           | 6.626 070 040 e-34  | 0.000 000 081 e-34  | J s            | 
-| Planck constant                   | `h`                | 6.626 070 040 e-34  | 0.000 000 081 e-34  | J s            | 
-| Speed of light in a vacuum        | `c`                | 2.997 924 58  e8    | 0.0                 | m s^-1         | 
-| Speed of light in a vacuum        | `speedOfLight`     | 2.997 924 58  e8    | 0.0                 | m s^-1         | 
+ | Quantity                          | Variable name        | Value               | Uncertainty         | Unit           | 
+ | --------                          | -------------        | ----                | ------              | ------         | 
+ | Avogadro constant                 | `avogadro`           | 6.022 140 857 e23   | 0.000 000 074 e23   | mol^-1         | 
+ | Boltzmann constant                | `boltzmann`          | 1.380 648 52  e-23  | 0.000 000 79  e-23  | J K^-1         | 
+ | Boltzmann constant                | `k`                  | 1.380 648 52  e-23  | 0.000 000 79  e-23  | J K^-1         | 
+ | conductance quantum               | `conductanceQuantum` | 7.748 091 7310 e-5  | 0.000 000 0018 e-5  | S              | 
+ | conductance quantum               | `G0`                 | 7.748 091 7310 e-5  | 0.000 000 0018 e-5  | S              | 
+ | Elementary charge                 | `elementaryCharge`   | 1.602 176 6208 e-19 | 0.000 000 0098 e-19 | C              | 
+ | classical electron radius         | `electronRadius`     | 2.817 940 3227 e-15 | 0.000 000 0019 e-15 | m              | 
+ | Faraday constant                  | `faraday`            | 96 485.332 89       | 0.000 59            | C mol^-1       | 
+ | Newtonian constant of gravitation | `G`                  | 6.674 08 e-11       | 0.000 31 e-11       | m^3 kg^-1 s^-2 | 
+ | Newtonian constant of gravitation | `newtonianGravity`   | 6.674 08 e-11       | 0.000 31 e-11       | m^3 kg^-1 s^-2 | 
+ | Planck constant                   | `planck`             | 6.626 070 040 e-34  | 0.000 000 081 e-34  | J s            | 
+ | Planck constant                   | `h`                  | 6.626 070 040 e-34  | 0.000 000 081 e-34  | J s            | 
+ | Speed of light in a vacuum        | `c`                  | 2.997 924 58  e8    | 0.0                 | m s^-1         | 
+ | Speed of light in a vacuum        | `speedOfLight`       | 2.997 924 58  e8    | 0.0                 | m s^-1         | 
 
 #### Particle masses
 | Quantity                          | Variable name      | Value               | Uncertainty         | Unit           | 

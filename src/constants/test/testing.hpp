@@ -9,7 +9,11 @@ using namespace njoy::constants;
 auto stringFor = hana::make_map(
   hana::make_pair( avogadro, std::string{ "Avogadro constant" } ),
   hana::make_pair( boltzmann, std::string{ "Boltzmann constant" } ),
+  // hana::make_pair( electric, std::string{ "electric constant" } ),
+  hana::make_pair( electronRadius, std::string{ "classical electron radius" } ),
   hana::make_pair( elementaryCharge, std::string{ "elementary charge" } ),
+  hana::make_pair( faraday, std::string{ "Faraday constant" } ),
+  hana::make_pair( conductanceQuantum, std::string{ "conductance quantum" } ),
   hana::make_pair( newtonianGravitation, 
                    std::string{ "Newtonian constant of gravitation" } ),
   hana::make_pair( planck, std::string{ "Planck constant" } ),
