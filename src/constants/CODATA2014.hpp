@@ -1,6 +1,3 @@
-#ifndef NJOY_CONSTANTS_PHYSICS_CODATA2014_HPP
-#define NJOY_CONSTANTS_PHYSICS_CODATA2014_HPP
-
 template< typename Base1, typename Base2 >
 struct map: Base1{
   Base2 uncertainty;
@@ -28,8 +25,6 @@ static constexpr auto CODATA2014 = addUncertainty(
         6.67408e-11*meter*meter*meter/kilo( gram )/second/second ),
       hana::make_pair( planck       , 6.626070040e-34*joule*second ),
       hana::make_pair( h            , 6.626070040e-34*joule*second ),
-      // hana::make_pair( hbar         , 1.0545718000e-34*joule*second )  
-      // hana::make_pair( reducedPlanck, 1.0545718000e-34*joule*second )  
       hana::make_pair( speedOfLight , 2.99792458e8*meter/second ),
       hana::make_pair( c            , 2.99792458e8*meter/second ),
 
@@ -55,8 +50,6 @@ static constexpr auto CODATA2014 = addUncertainty(
                     0.00031e-11*meter*meter*meter/kilo( gram )/second/second ),
     hana::make_pair( planck       , 0.000000081e-34*joule*second ),
     hana::make_pair( h            , 0.000000081e-34*joule*second ),
-    // hana::make_pair( hbar         , 0.000000013e-34*joule*second ) 
-    // hana::make_pair( reducedPlanck, 0.000000013e-34*joule*second ) 
     hana::make_pair( speedOfLight , 0.0*meter/second ),
     hana::make_pair( c            , 0.0*meter/second ),
 
@@ -70,5 +63,3 @@ static constexpr auto CODATA2014 = addUncertainty(
     hana::make_pair( alphaMass    , 0.000000082e-27*kilo( gram ) )
   )
 );
-
-#endif  // NJOY_CONSTANTS_PHYSICS_CODATA2014_HPP

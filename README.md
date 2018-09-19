@@ -58,10 +58,10 @@ The raw data for this is contained in [CODATA2014.txt](resources/CODATA2014.txt)
 ## Derived Constants
 Some constants are derived from others, but used sufficiently often that it is worth pre-computing the values. Their values are not listed here, but the variable names are.
 
- | Quanitity      | Value           | Unit | 
- | ----           | -----           | ---- | 
- | Reduced Planck | `hbar`          | J s  | 
- | Reduced Planck | `reducedPlanck` | J s  | 
+| Quanitity      | Value         | Unit | 
+| ----           | -----         | ---- | 
+| Reduced Planck | `hbar`        | J s  | 
+| Planck length  | `planckLencth | m    | 
 
 
 ## Using the constants

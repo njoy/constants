@@ -15,8 +15,7 @@ auto stringFor = hana::make_map(
   hana::make_pair( newtonianGravitation, std::string{ "Newtonian constant of gravitation" } ),
   hana::make_pair( planck, std::string{ "Planck constant" } ),
   hana::make_pair( h, std::string{ "Planck constant" } ),
-  // hana::make_pair( reducedPlanck, std::string{ "Planck constant over 2 pi" } ),
-  // hana::make_pair( hbar, std::string{ "Planck constant over 2 pi" } ),
+  hana::make_pair( hbar, std::string{ "Planck constant over 2 pi" } ),
   hana::make_pair( c, std::string{ "speed of light in vacuum" } ),
   hana::make_pair( speedOfLight, std::string{ "speed of light in vacuum" } ),
 

@@ -1,7 +1,7 @@
 
 #include "catch.hpp"
 
-#include "constants/math.hpp"
+#include "constants.hpp"
 
 SCENARIO( "Testing mathematical constants" ){
 

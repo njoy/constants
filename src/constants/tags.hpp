@@ -14,8 +14,6 @@ CONSTANT_TYPE( G );
 CONSTANT_TYPE( newtonianGravitation );
 CONSTANT_TYPE( planck );
 CONSTANT_TYPE( h );
-// CONSTANT_TYPE( hbar );
-// CONSTANT_TYPE( reducedPlanck );
 CONSTANT_TYPE( speedOfLight );
 CONSTANT_TYPE( c );
 
@@ -28,5 +26,9 @@ CONSTANT_TYPE( tritonMass );
 CONSTANT_TYPE( alphaMass );
 
 #undef CONSTANT_TYPE
+
+#define ALIAS( original, alias )  static constexpr auto alias = original;
+// ALIAS( boltzmann, k )
+#undef ALIAS
 
 #endif  // NJOY_CONSTANTS_TAGS_HPP

@@ -18,14 +18,17 @@ SCENARIO("test all the constants"){
     auto refKey = stringFor[ key ];
 
     GIVEN( "constant: " + refKey ){
-      auto reference = referenceValues[ stringFor[ key ] ];
+      auto reference = referenceValues[ refKey ];
 
-      CHECK( reference.first == CODATA[ key ].value );
-      CHECK( 
-        hana::if_( key ^hana::in^ hana::keys( CODATA.uncertainty ), 
-                  reference.second == CODATA.uncertainty[ key ].value,
-                  true )
-      );
+      // Hiding our shame
+      auto verifyIfExists = [&](auto key) {
+        return hana::overload(
+          []( hana::true_ ){ return true; },
+          [&]( auto value ){ return reference.second == value.value; } 
+        )( hana::find( CODATA.uncertainty, key ).value_or( hana::true_c ) );
+      };
+      CHECK( fabs( 1 - (reference.first/CODATA[ key ].value ) ) < 5E-10 );
+      CHECK( verifyIfExists( key ) );
     }
   });
 }
