@@ -1,8 +1,7 @@
 struct ReducedPlanck : hana::type< ReducedPlanck >{
   template< typename MAP >
   constexpr decltype( auto ) operator()( MAP&& map ) const {
-    return map[ planck ]/( 2*pi );
+    return map[ planck ]/( twopi );
   }
 };
-// static constexpr ReducedPlanck reducedPlanck;
 static constexpr ReducedPlanck hbar;
