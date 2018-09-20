@@ -13,9 +13,15 @@ CONSTANT_TYPE( electric );
 CONSTANT_TYPE( electronRadius );
 CONSTANT_TYPE( elementaryCharge );
 CONSTANT_TYPE( faraday );
+CONSTANT_TYPE( fineStructure );
+CONSTANT_TYPE( magnetic );
+CONSTANT_TYPE( magneticFluxQuantum );
+CONSTANT_TYPE( molarGas );
 CONSTANT_TYPE( newtonianGravitation );
 CONSTANT_TYPE( planck );
+CONSTANT_TYPE( rydberg );
 CONSTANT_TYPE( speedOfLight );
+CONSTANT_TYPE( stefanBoltzmann );
 
 CONSTANT_TYPE( electronMass );
 CONSTANT_TYPE( neutronMass );

@@ -13,12 +13,18 @@ auto stringFor = hana::make_map(
   hana::make_pair( electronRadius, std::string{ "classical electron radius" } ),
   hana::make_pair( elementaryCharge, std::string{ "elementary charge" } ),
   hana::make_pair( faraday, std::string{ "Faraday constant" } ),
+  hana::make_pair( fineStructure, std::string{ "fine-structure constant" } ),
   hana::make_pair( conductanceQuantum, std::string{ "conductance quantum" } ),
+  hana::make_pair( magnetic, std::string{ "mag. constant" } ),
+  hana::make_pair( magneticFluxQuantum, std::string{ "mag. flux quantum" } ),
+  hana::make_pair( molarGas, std::string{ "molar gas constant" } ),
   hana::make_pair( newtonianGravitation, 
                    std::string{ "Newtonian constant of gravitation" } ),
   hana::make_pair( planck, std::string{ "Planck constant" } ),
   hana::make_pair( hbar, std::string{ "Planck constant over 2 pi" } ),
+  hana::make_pair( rydberg, std::string{ "Rydberg constant" } ),
   hana::make_pair( speedOfLight, std::string{ "speed of light in vacuum" } ),
+  hana::make_pair( stefanBoltzmann, std::string{ "Stefan-Boltzmann constant" } ),
 
   // Masses
   hana::make_pair( electronMass, std::string{ "electron mass" } ),
