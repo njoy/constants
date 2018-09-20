@@ -18,7 +18,7 @@ static constexpr auto CODATA2014 = addUncertainty(
       hana::make_pair( avogadro     , 6.022140857e23/mole ),
       hana::make_pair( boltzmann    , 1.38064852e-23*joule/mole ),
       hana::make_pair( conductanceQuantum, 7.7480917310e-5*siemens ),
-      // hana::make_pair( electric, 8.854187817e-12*farad/meter ),
+      hana::make_pair( electric, 8.854187817e-12*farad/meter ),
       hana::make_pair( electronRadius, 2.8179403227e-15*meter ),
       hana::make_pair( elementaryCharge, 1.6021766208e-19*coulomb ),
       hana::make_pair( faraday, 9.648533289e4*coulomb/mole ),
@@ -41,7 +41,7 @@ static constexpr auto CODATA2014 = addUncertainty(
   hana::make_map(
     hana::make_pair( avogadro     , 0.000000074e23/mole ),
     hana::make_pair( boltzmann    , 0.00000079e-23*joule/mole ),
-    // hana::make_pair( electric, 0.0*farad/meter ),
+    hana::make_pair( electric, 0.0*farad/meter ),
     hana::make_pair( electronRadius, 1.9e-24*meter ),
     hana::make_pair( elementaryCharge, 0.0000000098e-19*coulomb ),
     hana::make_pair( faraday, 5.9e-4*coulomb/mole ),

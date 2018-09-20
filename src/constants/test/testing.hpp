@@ -9,7 +9,7 @@ using namespace njoy::constants;
 auto stringFor = hana::make_map(
   hana::make_pair( avogadro, std::string{ "Avogadro constant" } ),
   hana::make_pair( boltzmann, std::string{ "Boltzmann constant" } ),
-  // hana::make_pair( electric, std::string{ "electric constant" } ),
+  hana::make_pair( electric, std::string{ "electric constant" } ),
   hana::make_pair( electronRadius, std::string{ "classical electron radius" } ),
   hana::make_pair( elementaryCharge, std::string{ "elementary charge" } ),
   hana::make_pair( faraday, std::string{ "Faraday constant" } ),
@@ -34,8 +34,10 @@ auto toValue = []( auto& line, int begin, int end ){
   auto v = ranges::to_< std::string >( 
     line 
       | ranges::view::slice( begin, end )
-      | ranges::view::filter( []( auto&& e ){ return not std::isspace( e ); } )
-  );
+      | ranges::view::adjacent_remove_if( []( auto&& e1, auto&& e2 ){ 
+        return (e1 == '.') and ( (e2 == '.') or ( std::isspace( e2 ) ) ); } )
+      | ranges::view::filter( [](auto&& e ){ return not std::isspace( e ); } )
+    );
   return v == "(exact)" ? 0.0 :  std::stod( v ); 
 };
 

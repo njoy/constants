@@ -9,7 +9,7 @@
 CONSTANT_TYPE( avogadro );
 CONSTANT_TYPE( boltzmann );
 CONSTANT_TYPE( conductanceQuantum );
-// CONSTANT_TYPE( electric );
+CONSTANT_TYPE( electric );
 CONSTANT_TYPE( electronRadius );
 CONSTANT_TYPE( elementaryCharge );
 CONSTANT_TYPE( faraday );
