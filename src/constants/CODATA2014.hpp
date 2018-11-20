@@ -1,17 +1,3 @@
-template< typename Base1, typename Base2 >
-struct map: Base1{
-  Base2 uncertainty;
-  constexpr map(Base1 b1, Base2 b2 ):
-    Base1( b1 ),
-    uncertainty( b2 )
-  { }
-};
-
-template< typename Base1, typename Base2 >
-constexpr auto addUncertainty(Base1 values, Base2 uncertainty ) {
-  return map< Base1, Base2 >( values, uncertainty );
-}
-
 static constexpr auto CODATA2014 = addUncertainty(
   hana::fold( derivedConstants,
     hana::make_map(

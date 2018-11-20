@@ -1,4 +1,3 @@
-
 #include <fstream>
 #include <typeinfo>
 
@@ -28,13 +27,6 @@ void checkMap( MAP& map ){
           [&]( auto value ){ return reference.second == value.value; } 
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
-
-      // njoy::Log::info( "{}", refKey );
-      // njoy::Log::info( "ref: {:.16G}, value: {:.16G}", 
-      //                  reference.first, map[ key ].value );
-      // njoy::Log::info( "refU: {}, valueU: {}", 
-      //                  reference.second );
-      //                  // , map.uncertainty[ key ].value );
       CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 5E-10 );
       CHECK( verifyIfExists( key ) );
     }
