@@ -1,6 +1,3 @@
-#ifndef NJOY_CONSTANTS_TAGS_HPP
-#define NJOY_CONSTANTS_TAGS_HPP
-
 #define CONSTANT_TYPE( NAME ) \
  \
   struct NAME##_t : hana::type< NAME##_t >{}; \
@@ -41,5 +38,3 @@ CONSTANT_TYPE( alphaMass );
   ALIAS( conductanceQuantum, G0 );
 
 #undef ALIAS
-
-#endif  // NJOY_CONSTANTS_TAGS_HPP

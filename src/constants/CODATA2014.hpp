@@ -1,3 +1,11 @@
+#ifndef NJOY_CONSTANTS_CODATA2014_HPP
+#define NJOY_CONSTANTS_CODATA2014_HPP
+
+#include "constants.hpp"
+
+namespace njoy {
+namespace constants {
+
 static constexpr auto CODATA2014 = addUncertainty(
   hana::fold( derivedConstants,
     hana::make_map(
@@ -59,3 +67,7 @@ static constexpr auto CODATA2014 = addUncertainty(
     hana::make_pair( alphaMass    , 0.000000082e-27*kilo( gram ) )
   )
 );
+
+}
+}
+#endif // NJOY_CONSTANTS_CODATA2014_HPP
