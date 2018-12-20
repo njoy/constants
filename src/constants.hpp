@@ -3,7 +3,6 @@
 
 #include "boost/hana.hpp"
 #include "dimwits.hpp"
-#include "Log.hpp"
 
 using namespace boost;
 using namespace dimwits;
