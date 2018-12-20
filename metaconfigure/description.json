@@ -574,7 +574,14 @@
   },
   "header files": [
     "src/constants.hpp",
-    "src/constants/math.hpp"
+    "src/constants/CODATA2014.hpp",
+    "src/constants/derived.hpp",
+    "src/constants/map.hpp",
+    "src/constants/math.hpp",
+    "src/constants/tags.hpp",
+    "src/constants/derived/Insert.hpp",
+    "src/constants/derived/ReducedPlanck.hpp",
+    "src/constants/src/addUncertainty.hpp"
   ],
   "ignore pattern": "$^",
   "implementation files": [],
@@ -592,8 +599,10 @@
   "strict": true,
   "test pattern": "test$",
   "tests": {
-    "constants.math": [
-      "src/constants/math/test/math.test.cpp"
+    "constants": [
+      "src/constants/test/CODATA2014.test.cpp",
+      "src/constants/test/constants.test.cpp",
+      "src/constants/test/math.test.cpp"
     ]
   },
   "update": true
