@@ -1,11 +1,14 @@
+#define CATCH_CONFIG_MAIN
+
 #include <fstream>
 #include <typeinfo>
 
 #include "catch.hpp"
 
 #include "constants.hpp"
-#include "constants/test/testing.hpp"
-#include "constants/CODATA2018.hpp"
+#include "constants/CODATA2014.hpp"
+
+#include "constants/CODATA2014/test/testing.hpp"
 
 using namespace dimwits;
 
@@ -35,22 +38,22 @@ void checkMap( MAP& map ){
 
 SCENARIO("test all the constants"){
 
-  checkMap( CODATA2018 );
+  checkMap( CODATA2014 );
 
   auto aliasMap = addUncertainty(
     hana::make_map(
-      hana::make_pair( k, CODATA2018[ k ] ),
-      hana::make_pair( h, CODATA2018[ h ] ),
-      hana::make_pair( G, CODATA2018[ G ] ),
-      hana::make_pair( c, CODATA2018[ c ] )
+      hana::make_pair( k, CODATA2014[ k ] ),
+      hana::make_pair( h, CODATA2014[ h ] ),
+      hana::make_pair( G, CODATA2014[ G ] ),
+      hana::make_pair( c, CODATA2014[ c ] )
     ),
 
     // Uncertainties
     hana::make_map(
-      hana::make_pair( k, CODATA2018.uncertainty[ k ] ),
-      hana::make_pair( h, CODATA2018.uncertainty[ h ] ),
-      hana::make_pair( G, CODATA2018.uncertainty[ G ] ),
-      hana::make_pair( c, CODATA2018.uncertainty[ c ] )
+      hana::make_pair( k, CODATA2014.uncertainty[ k ] ),
+      hana::make_pair( h, CODATA2014.uncertainty[ h ] ),
+      hana::make_pair( G, CODATA2014.uncertainty[ G ] ),
+      hana::make_pair( c, CODATA2014.uncertainty[ c ] )
     )
   );
 

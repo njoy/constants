@@ -25,7 +25,8 @@ static constexpr auto CODATA2014 = addUncertainty(
       hana::make_pair( planck       , 6.626070040e-34*joule*second ),
       hana::make_pair( rydberg, 1.0973731568508e7/meter ),
       hana::make_pair( speedOfLight , 2.99792458e8*meter/second ),
-    hana::make_pair( stefanBoltzmann, 5.670367e-8*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
+      hana::make_pair( stefanBoltzmann, 
+        5.670367e-8*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
 
       // Masses
       hana::make_pair( electronMass , 9.10938356e-31*kilo( gram ) ),

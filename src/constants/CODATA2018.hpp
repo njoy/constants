@@ -9,14 +9,14 @@ namespace constants {
 static constexpr auto CODATA2018 = addUncertainty(
   hana::fold( derivedConstants,
     hana::make_map(
-      hana::make_pair( avogadro     , 6.02214076/mole ),
-      hana::make_pair( boltzmann    , 1.380649-23*joule/kelvin ),
-      hana::make_pair( conductanceQuantum, 7.748091729-5*siemens ),
-      hana::make_pair( electric, 8.8541878128-12*farad/meter ),
-      hana::make_pair( electronRadius, 2.8179403262-15*meter ),
-      hana::make_pair( elementaryCharge, 1.602176634-19*coulomb ),
+      hana::make_pair( avogadro     , 6.02214076e23/mole ),
+      hana::make_pair( boltzmann    , 1.380649e-23*joule/kelvin ),
+      hana::make_pair( conductanceQuantum, 7.748091729e-5*siemens ),
+      hana::make_pair( electric, 8.8541878128e-12*farad/meter ),
+      hana::make_pair( electronRadius, 2.8179403262e-15*meter ),
+      hana::make_pair( elementaryCharge, 1.602176634e-19*coulomb ),
       hana::make_pair( faraday, 9.648533212e4*coulomb/mole ),
-      hana::make_pair( fineStructure, 7.2973525693-3*meter/meter ),
+      hana::make_pair( fineStructure, 7.2973525693e-3*meter/meter ),
       hana::make_pair( magnetic, 1.25663706212e-6*newton/ampere/ampere ),
       hana::make_pair( magneticFluxQuantum, 2.067833848e-15*weber ),
       hana::make_pair( molarGas, 8.314462618*joule/mole/kelvin ),
@@ -60,7 +60,7 @@ static constexpr auto CODATA2018 = addUncertainty(
                      0.0*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
 
     // Masses
-    hana::make_pair( electronMass , 0.0000000028-31*kilo( gram ) ),
+    hana::make_pair( electronMass , 0.0000000028e-31*kilo( gram ) ),
     hana::make_pair( neutronMass  , 0.0000000095e-27*kilo( gram ) ),
     hana::make_pair( protonMass   , 0.00000000051e-27*kilo( gram ) ),
     hana::make_pair( deuteronMass , 0.0000000010e-27*kilo( gram ) ),
