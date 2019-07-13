@@ -15,7 +15,7 @@ using namespace dimwits;
 template< typename MAP >
 void checkMap( MAP& map ){
   auto referenceValues = 
-      defineReferenceValues( std::ifstream("CODATA2018.txt") );
+      defineReferenceValues( std::ifstream("CODATA2014.txt") );
 
   hana::for_each( hana::keys( map ), [&]( auto&& key ){
     auto refKey = stringFor[ key ];
