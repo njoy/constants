@@ -4,6 +4,7 @@
 #include <typeinfo>
 
 #include "catch.hpp"
+#include "Log.hpp"
 
 #include "constants.hpp"
 #include "constants/CODATA2018/test/testing.hpp"
@@ -29,6 +30,12 @@ void checkMap( MAP& map ){
           [&]( auto value ){ return reference.second == value.value; } 
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
+
+      njoy::Log::info( "ref.first: {}", reference.first );
+      njoy::Log::info( "map.value: {}", map[ key ].value );
+      njoy::Log::info( "ref.second: {}", reference.second );
+      njoy::Log::info( "map.uncertainty: {}", map.uncertainty[ key ].value_or( 1E10 ) );
+
       CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 5E-10 );
       CHECK( verifyIfExists( key ) );
     }

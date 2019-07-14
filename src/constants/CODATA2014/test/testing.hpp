@@ -63,7 +63,7 @@ auto split = []( auto line ){
 
 auto defineReferenceValues( std::istream&& is ){
   auto result = ranges::getlines( is )
-    | ranges::view::drop( 10 )
+    | ranges::view::drop( 11 )
     | ranges::view::transform( split )
     | ranges::to_vector;
 
