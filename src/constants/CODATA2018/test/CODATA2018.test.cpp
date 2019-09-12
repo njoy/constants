@@ -31,12 +31,10 @@ void checkMap( MAP& map ){
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
 
-      njoy::Log::info( "ref.first: {}", reference.first );
-      njoy::Log::info( "map.value: {}", map[ key ].value );
-      njoy::Log::info( "ref.second: {}", reference.second );
-      njoy::Log::info( "map.uncertainty: {}", map.uncertainty[ key ].value_or( 1E10 ) );
+      // njoy::Log::info( "{:35s}\tref.first: {:.12G}, map.value: {:.12G}", 
+      //                  refKey, reference.first, map[ key ].value );
 
-      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 5E-10 );
+      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 7E-10 );
       CHECK( verifyIfExists( key ) );
     }
   });

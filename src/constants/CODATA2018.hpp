@@ -41,7 +41,7 @@ static constexpr auto CODATA2018 = addUncertainty(
   // Uncertainties
   hana::make_map(
     hana::make_pair( avogadro     , 0.0/mole ),
-    hana::make_pair( boltzmann    , 0.00000079e-23*joule/mole ),
+    hana::make_pair( boltzmann    , 0.0*joule/mole ),
     hana::make_pair( conductanceQuantum, 0.0*siemens ),
     hana::make_pair( electric, 1.3e-21*farad/meter ),
     hana::make_pair( electronRadius, 1.3e-24*meter ),
@@ -61,11 +61,11 @@ static constexpr auto CODATA2018 = addUncertainty(
 
     // Masses
     hana::make_pair( electronMass , 0.0000000028e-31*kilo( gram ) ),
-    hana::make_pair( neutronMass  , 0.0000000095e-27*kilo( gram ) ),
+    hana::make_pair( neutronMass  , 0.00000000095e-27*kilo( gram ) ),
     hana::make_pair( protonMass   , 0.00000000051e-27*kilo( gram ) ),
     hana::make_pair( deuteronMass , 0.0000000010e-27*kilo( gram ) ),
     hana::make_pair( helionMass   , 0.0000000015e-27*kilo( gram ) ),
-    hana::make_pair( tritonMass   , 0.000000062e-27*kilo( gram ) ),
+    hana::make_pair( tritonMass   , 0.0000000015e-27*kilo( gram ) ),
     hana::make_pair( alphaMass    , 0.0000000020e-27*kilo( gram ) )
   )
 );
