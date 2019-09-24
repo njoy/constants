@@ -28,6 +28,7 @@ auto stringFor = hana::make_map(
   hana::make_pair( newtonianGravitation, 
                    std::string{ "Newtonian constant of gravitation" } ),
   hana::make_pair( planck, std::string{ "Planck constant" } ),
+  hana::make_pair( reducedPlanck, std::string{ "reduced Planck constant" } ),
   hana::make_pair( hbar, std::string{ "reduced Planck constant" } ),
   hana::make_pair( rydberg, std::string{ "Rydberg constant" } ),
   hana::make_pair( speedOfLight, std::string{ "speed of light in vacuum" } ),
@@ -67,7 +68,7 @@ void checkMap( MAP& map ){
           [&]( auto value ){ return value.units() == units; } 
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
-      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 7E-10 );
+      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
       CHECK( verifyIfExists( key ) );
       // CHECK( verifyMatchingUnits( key, map[ key ].units() ) );
     }

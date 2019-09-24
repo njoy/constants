@@ -7,7 +7,6 @@ namespace njoy {
 namespace constants {
 
 static constexpr auto CODATA2018 = addUncertainty(
-  hana::fold( derivedConstants,
     hana::make_map(
       hana::make_pair( avogadro     , 6.02214076e23/mole ),
       hana::make_pair( boltzmann    , 1.380649e-23*joule/kelvin ),
@@ -23,6 +22,7 @@ static constexpr auto CODATA2018 = addUncertainty(
       hana::make_pair( newtonianGravitation, 
         6.67430e-11*meter*meter*meter/kilo( gram )/second/second ),
       hana::make_pair( planck       , 6.62607015e-34*joule*second ),
+      hana::make_pair( reducedPlanck, 1.054571817e-34*joule*second ),
       hana::make_pair( rydberg, 1.0973731568160e7/meter ),
       hana::make_pair( speedOfLight , 2.99792458e8*meter/second ),
       hana::make_pair( stefanBoltzmann, 
@@ -36,8 +36,7 @@ static constexpr auto CODATA2018 = addUncertainty(
       hana::make_pair( helionMass   , 5.0064127796e-27*kilo( gram ) ),
       hana::make_pair( tritonMass   , 5.0073567446e-27*kilo( gram ) ),
       hana::make_pair( alphaMass    , 6.6446573357e-27*kilo( gram ) )
-    ), insert 
-  ),
+    ), 
   // Uncertainties
   hana::make_map(
     hana::make_pair( avogadro     , 0.0/mole ),
@@ -54,6 +53,7 @@ static constexpr auto CODATA2018 = addUncertainty(
     hana::make_pair( newtonianGravitation, 
                     1.5e-15*meter*meter*meter/kilo( gram )/second/second ),
     hana::make_pair( planck       , 0.0*joule*second ),
+    hana::make_pair( reducedPlanck, 0.0*joule*second ),
     hana::make_pair( rydberg, 2.1e-5/meter ),
     hana::make_pair( speedOfLight , 0.0*meter/second ),
     hana::make_pair( stefanBoltzmann, 
