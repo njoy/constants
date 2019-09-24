@@ -4,4 +4,5 @@ struct ReducedPlanck : hana::type< ReducedPlanck >{
     return map[ planck ]/( twopi );
   }
 };
+
 ReducedPlanck hbar;

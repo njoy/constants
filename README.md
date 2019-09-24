@@ -10,6 +10,24 @@ This repository contains a collection of mathematical and physical constants. Ad
 3. in the files used to test/verify the values.
 While every effort is made to ensure that each of these values are the same, inconsistencies may appear. If discovered, please [file an issue](https://github.com/njoy/constants/issues).
 
+
+## Using the constants
+Here is an example of how the mathematical constants can be used.
+```cpp
+#include "constants.hpp"
+
+double r{1.0};
+
+auto area = njoy::constants::pi*r**2;
+
+auto CODATA = njoy::constants::CODATA2018;
+
+auto c = CODATA[c];
+auto cUncertainty = CODATA.uncertainty[c]; // 0.0
+auto h = CODATA[Planck];
+auto hUncertainty = CODATA.uncertainty[Planck];
+```
+
 ## Mathematical Constants
 The (short) list of mathematical constants was taken from [Wikipedia:Mathematical constant](https://en.wikipedia.org/wiki/Mathematical_constant). While there are many more constants given there, we have limited this initially to the [Basic mathematical constants](https://en.wikipedia.org/wiki/Mathematical_constant#Basic_mathematical_constants).
 
@@ -112,24 +130,6 @@ Some constants are derived from others, but used sufficiently often that it is w
 | 2π             | `twopi`        | --   | 
 | Reduced Planck | `hbar`         | J s  | 
 | Planck length  | `planckLength` | m    | 
-
-
-## Using the constants
-Here is an example of how the mathematical constants can be used.
-```cpp
-#include "constants.hpp"
-
-double r{1.0};
-
-auto area = njoy::constants::pi*r**2;
-
-auto CODATA = njoy::constants::CODATA2014;
-
-auto c = CODATA[c];
-auto cUncertainty = CODATA.uncertainty[c]; // 0.0
-auto h = CODATA[Planck];
-auto hUncertainty = CODATA.uncertainty[Planck];
-```
 
 ## A note on floating point arithmetic 
 Some values of these constants are known to much greater precision than what we have reported here (e.g., `pi` and `e`.) We have limited the number of significant digits in this repository to 16 as anything more would be insignificant in floating point arithmetic.

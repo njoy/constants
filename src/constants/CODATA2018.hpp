@@ -41,7 +41,7 @@ static constexpr auto CODATA2018 = addUncertainty(
   // Uncertainties
   hana::make_map(
     hana::make_pair( avogadro     , 0.0/mole ),
-    hana::make_pair( boltzmann    , 0.0*joule/mole ),
+    hana::make_pair( boltzmann    , 0.0*joule/kelvin  ),
     hana::make_pair( conductanceQuantum, 0.0*siemens ),
     hana::make_pair( electric, 1.3e-21*farad/meter ),
     hana::make_pair( electronRadius, 1.3e-24*meter ),

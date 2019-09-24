@@ -61,12 +61,15 @@ void checkMap( MAP& map ){
           [&]( auto value ){ return reference.second == value.value; } 
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
-
-      // njoy::Log::info( "{:35s}\tref.first: {:.12G}, map.value: {:.12G}", 
-      //                  refKey, reference.first, map[ key ].value );
-
+      auto verifyMatchingUnits = [&](auto key, auto units) {
+        return hana::overload(
+          []( hana::true_ ){ return true; },
+          [&]( auto value ){ return value.units() == units; } 
+        )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
+      };
       CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 7E-10 );
       CHECK( verifyIfExists( key ) );
+      // CHECK( verifyMatchingUnits( key, map[ key ].units() ) );
     }
   });
 }
