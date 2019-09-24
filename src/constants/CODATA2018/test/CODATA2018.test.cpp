@@ -32,7 +32,8 @@ auto stringFor = hana::make_map(
   hana::make_pair( hbar, std::string{ "reduced Planck constant" } ),
   hana::make_pair( rydberg, std::string{ "Rydberg constant" } ),
   hana::make_pair( speedOfLight, std::string{ "speed of light in vacuum" } ),
-  hana::make_pair( stefanBoltzmann, std::string{ "Stefan-Boltzmann constant" } ),
+  hana::make_pair( stefanBoltzmann, 
+                   std::string{ "Stefan-Boltzmann constant" } ),
 
   // Masses
   hana::make_pair( electronMass, std::string{ "electron mass" } ),
