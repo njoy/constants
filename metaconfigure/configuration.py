@@ -2,9 +2,9 @@ import copy
 
 languages = {'c' : {}, 'c++' : {}, 'fortran' : {} }
 
-for langauge in languages.keys():
-    languages[langauge]['file extension'] = {}
-    languages[langauge]['compiler'] = {}
+for language in languages.keys():
+    languages[language]['file extension'] = {}
+    languages[language]['compiler'] = {}
 
 languages['c']['standards'] = ['c89', 'c99', 'c11']
 languages['c++']['standards'] = ['c++98', 'c++11', 'c++14']
@@ -15,7 +15,7 @@ languages['c']['file extension']['header files'] = ['h']
 languages['c++']['file extension']['implementation files'] = ['c++', 'cxx', 'cpp', 'cc', 'C']
 languages['c++']['file extension']['header files'] = ['h++', 'hxx', 'hpp', 'hh', 'h']
 languages['fortran']['file extension']['implementation files'] = ['f', 'for', 'f90']
-    
+
 languages['c']['compiler']['gcc'] = {}
 languages['c']['compiler']['llvm clang'] = {}
 languages['c']['compiler']['apple clang'] = {}

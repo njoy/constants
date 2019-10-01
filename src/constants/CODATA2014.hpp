@@ -20,12 +20,12 @@ static constexpr auto CODATA2014 = addUncertainty(
       hana::make_pair( magnetic, 12.566370614e-7*newton/ampere/ampere ),
       hana::make_pair( magneticFluxQuantum, 2.067833831e-15*weber ),
       hana::make_pair( molarGas, 8.3144598*joule/mole/kelvin ),
-      hana::make_pair( newtonianGravitation, 
+      hana::make_pair( newtonianGravitation,
         6.67408e-11*meter*meter*meter/kilo( gram )/second/second ),
       hana::make_pair( planck       , 6.626070040e-34*joule*second ),
       hana::make_pair( rydberg, 1.0973731568508e7/meter ),
       hana::make_pair( speedOfLight , 2.99792458e8*meter/second ),
-      hana::make_pair( stefanBoltzmann, 
+      hana::make_pair( stefanBoltzmann,
         5.670367e-8*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
 
       // Masses
@@ -36,7 +36,7 @@ static constexpr auto CODATA2014 = addUncertainty(
       hana::make_pair( helionMass   , 5.0064127000e-27*kilo( gram ) ),
       hana::make_pair( tritonMass   , 5.007356665e-27*kilo( gram ) ),
       hana::make_pair( alphaMass    , 6.644657230e-27*kilo( gram ) )
-    ), insert 
+    ), insert
   ),
   // Uncertainties
   hana::make_map(
@@ -51,12 +51,13 @@ static constexpr auto CODATA2014 = addUncertainty(
     hana::make_pair( magnetic, 0.0*newton/ampere/ampere ),
     hana::make_pair( magneticFluxQuantum, 1.3e-23*weber ),
     hana::make_pair( molarGas, 4.8e-6*joule/mole/kelvin ),
-    hana::make_pair( newtonianGravitation, 
+    hana::make_pair( newtonianGravitation,
                     0.00031e-11*meter*meter*meter/kilo( gram )/second/second ),
     hana::make_pair( planck       , 0.000000081e-34*joule*second ),
     hana::make_pair( rydberg, 6.5e-5/meter ),
     hana::make_pair( speedOfLight , 0.0*meter/second ),
-    hana::make_pair( stefanBoltzmann, 1.3e-13*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
+    hana::make_pair( stefanBoltzmann,
+                     1.3e-13*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
 
     // Masses
     hana::make_pair( electronMass , 0.00000011e-31*kilo( gram ) ),

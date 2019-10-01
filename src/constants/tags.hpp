@@ -1,7 +1,7 @@
 #define CONSTANT_TYPE( NAME ) \
  \
   struct NAME##_t : hana::type< NAME##_t >{}; \
-  static constexpr NAME##_t NAME{}; \
+  static constexpr NAME##_t NAME{}
 
 CONSTANT_TYPE( avogadro );
 CONSTANT_TYPE( boltzmann );
@@ -30,7 +30,7 @@ CONSTANT_TYPE( alphaMass );
 
 #undef CONSTANT_TYPE
 
-#define ALIAS( original, alias )  static constexpr auto alias = original;
+#define ALIAS( original, alias )  static constexpr auto alias = original
   ALIAS( boltzmann, k );
   ALIAS( planck, h );
   ALIAS( newtonianGravitation, G );

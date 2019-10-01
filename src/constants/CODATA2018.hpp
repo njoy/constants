@@ -20,12 +20,12 @@ static constexpr auto CODATA2018 = addUncertainty(
       hana::make_pair( magnetic, 1.25663706212e-6*newton/ampere/ampere ),
       hana::make_pair( magneticFluxQuantum, 2.067833848e-15*weber ),
       hana::make_pair( molarGas, 8.314462618*joule/mole/kelvin ),
-      hana::make_pair( newtonianGravitation, 
+      hana::make_pair( newtonianGravitation,
         6.67430e-11*meter*meter*meter/kilo( gram )/second/second ),
       hana::make_pair( planck       , 6.62607015e-34*joule*second ),
       hana::make_pair( rydberg, 1.0973731568160e7/meter ),
       hana::make_pair( speedOfLight , 2.99792458e8*meter/second ),
-      hana::make_pair( stefanBoltzmann, 
+      hana::make_pair( stefanBoltzmann,
         5.670374419e-8*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
 
       // Masses
@@ -36,7 +36,7 @@ static constexpr auto CODATA2018 = addUncertainty(
       hana::make_pair( helionMass   , 5.0064127796e-27*kilo( gram ) ),
       hana::make_pair( tritonMass   , 5.0073567446e-27*kilo( gram ) ),
       hana::make_pair( alphaMass    , 6.6446573357e-27*kilo( gram ) )
-    ), insert 
+    ), insert
   ),
   // Uncertainties
   hana::make_map(
@@ -51,12 +51,12 @@ static constexpr auto CODATA2018 = addUncertainty(
     hana::make_pair( magnetic, 1.9e-16*newton/ampere/ampere ),
     hana::make_pair( magneticFluxQuantum, 0.0*weber ),
     hana::make_pair( molarGas, 0.0*joule/mole/kelvin ),
-    hana::make_pair( newtonianGravitation, 
+    hana::make_pair( newtonianGravitation,
                     1.5e-15*meter*meter*meter/kilo( gram )/second/second ),
     hana::make_pair( planck       , 0.0*joule*second ),
     hana::make_pair( rydberg, 2.1e-5/meter ),
     hana::make_pair( speedOfLight , 0.0*meter/second ),
-    hana::make_pair( stefanBoltzmann, 
+    hana::make_pair( stefanBoltzmann,
                      0.0*watt/meter/meter/kelvin/kelvin/kelvin/kelvin ),
 
     // Masses

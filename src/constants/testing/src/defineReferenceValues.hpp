@@ -1,6 +1,6 @@
 auto split = []( auto line ){
-  auto key = ranges::to_< std::string >( 
-    line 
+  auto key = ranges::to_< std::string >(
+    line
       | ranges::view::slice( 0, 60 )
       | ranges::view::reverse
       | ranges::view::drop_while( []( auto&& e ){ return std::isspace( e ); } )
@@ -18,6 +18,6 @@ decltype( auto ) defineReferenceValues( std::istream&& is ){
     | ranges::view::transform( testing::split )
     | ranges::to_vector;
 
-  return ranges::to_< 
+  return ranges::to_<
     std::map< std::string, std::pair< double, double > > >( result );
 }

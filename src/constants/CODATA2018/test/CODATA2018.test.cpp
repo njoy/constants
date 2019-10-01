@@ -25,13 +25,14 @@ auto stringFor = hana::make_map(
   hana::make_pair( magnetic, std::string{ "vacuum mag. permeability" } ),
   hana::make_pair( magneticFluxQuantum, std::string{ "mag. flux quantum" } ),
   hana::make_pair( molarGas, std::string{ "molar gas constant" } ),
-  hana::make_pair( newtonianGravitation, 
+  hana::make_pair( newtonianGravitation,
                    std::string{ "Newtonian constant of gravitation" } ),
   hana::make_pair( planck, std::string{ "Planck constant" } ),
   hana::make_pair( hbar, std::string{ "reduced Planck constant" } ),
   hana::make_pair( rydberg, std::string{ "Rydberg constant" } ),
   hana::make_pair( speedOfLight, std::string{ "speed of light in vacuum" } ),
-  hana::make_pair( stefanBoltzmann, std::string{ "Stefan-Boltzmann constant" } ),
+  hana::make_pair( stefanBoltzmann,
+                   std::string{ "Stefan-Boltzmann constant" } ),
 
   // Masses
   hana::make_pair( electronMass, std::string{ "electron mass" } ),
@@ -45,7 +46,7 @@ auto stringFor = hana::make_map(
 
 template< typename MAP >
 void checkMap( MAP& map ){
-  auto referenceValues = 
+  auto referenceValues =
       testing::defineReferenceValues( std::ifstream("CODATA2018.txt") );
 
   hana::for_each( hana::keys( map ), [&]( auto&& key ){
@@ -58,17 +59,18 @@ void checkMap( MAP& map ){
       auto verifyIfExists = [&](auto key) {
         return hana::overload(
           []( hana::true_ ){ return true; },
-          [&]( auto value ){ return reference.second == value.value; } 
+          [&]( auto value ){ return reference.second == value.value; }
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
       auto verifyMatchingUnits = [&](auto key, auto units) {
         return hana::overload(
           []( hana::true_ ){ return true; },
-          [&]( auto value ){ return value.units() == units; } 
+          [&]( auto value ){ return value.units() == units; }
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
       CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 7E-10 );
       CHECK( verifyIfExists( key ) );
+      (void)verifyMatchingUnits; // FIXME silence "unused variable" warning
       // CHECK( verifyMatchingUnits( key, map[ key ].units() ) );
     }
   });

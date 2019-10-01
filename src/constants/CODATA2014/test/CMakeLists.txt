@@ -10,7 +10,7 @@ $<$<BOOL:${link_time_optimization}>:${${PREFIX}_link_time_optimization_flags}>
 $<$<BOOL:${nonportable_optimization}>:${${PREFIX}_nonportable_optimization_flags}>>
 
 ${CXX_appended_flags} ${constants_appended_flags} )
-target_link_libraries( constants.CODATA2014.test PUBLIC constants ) 
+target_link_libraries( constants.CODATA2014.test PUBLIC constants )
 file( GLOB resources "resources/*" )
 foreach( resource ${resources})
     file( COPY "${resource}" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}" )

@@ -1,7 +1,7 @@
 
-cmake_minimum_required( VERSION 3.2 ) 
+cmake_minimum_required( VERSION 3.2 )
 set( CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Supported configuration types" FORCE )
-        
+
 if ( NOT GIT_EXECUTABLE )
     find_package( Git 2.1 )
     if ( NOT GIT_FOUND )
@@ -15,11 +15,11 @@ if( NOT ROOT_DIRECTORY )
         if ( NOT PYTHON_EXECUTABLE )
             find_package( PythonInterp 3.4 )
             if ( NOT PYTHONINTERP_FOUND )
-                message( FATAL_ERROR "Python interpeter installation was not found." )
+                message( FATAL_ERROR "Python interpreter installation was not found." )
             endif()
         endif()
         execute_process( COMMAND ${PYTHON_EXECUTABLE} "./metaconfigure/fetch_subprojects.py"
-                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} 
+                         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                          RESULT_VARIABLE fetch_failure )
         if ( NOT fetch_failure )
             set( fetched_subprojects TRUE CACHE BOOL "fetch script ran" )
@@ -54,7 +54,7 @@ option( profile_generate "Enable binary instrumentation to generation execution 
 
 # additional optimizations
 option( link_time_optimization "Enable link time optimization in the RELEASE configuration" )
-option( profile_use "In the RELEASE configuration, leverage previously generated exeution profile to inform optimization decisions" )
+option( profile_use "In the RELEASE configuration, leverage previously generated execution profile to inform optimization decisions" )
 option( nonportable_optimization "Enable optimizations which compromise portability of resulting binary in the RELEASE configuration" )
 
 # libraries and linking
@@ -65,7 +65,7 @@ endif()
 
 CMAKE_DEPENDENT_OPTION( static_libraries "Statically link component libraries" OFF "NOT static" ON )
 
-option( unit_tests "Compile the constants unit tests and integrate with ctest" ON ) 
+option( unit_tests "Compile the constants unit tests and integrate with ctest" ON )
 
 if ( profile_generate AND profile_use )
     message( FATAL_ERROR "Cannot both generate and use execution profile in the same configuration" )
@@ -256,7 +256,7 @@ execute_process(
     WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
     OUTPUT_VARIABLE GIT_HASH
     OUTPUT_STRIP_TRAILING_WHITESPACE
-) 
+)
 
 message( STATUS "" )
 message( STATUS "-----------------------------------------------------------" )
@@ -291,22 +291,21 @@ target_link_libraries( constants INTERFACE "$<$<AND:$<CONFIG:RELEASE>,$<BOOL:${l
 target_link_libraries( constants INTERFACE range-v3-adapter INTERFACE catch-adapter INTERFACE Log INTERFACE dimwits )
 
 if( NOT is_subproject )
-    enable_testing() 
+    enable_testing()
     if ( unit_tests )
         add_subdirectory( src/constants/CODATA2014/test )
         add_subdirectory( src/constants/CODATA2018/test )
         add_subdirectory( src/constants/math/test )
-    endif() 
+    endif()
 endif()
 
 install( DIRECTORY src/ DESTINATION include
-         FILE_PERMISSIONS OWNER_READ OWNER_WRITE 
-                          GROUP_READ 
+         FILE_PERMISSIONS OWNER_READ OWNER_WRITE
+                          GROUP_READ
                           WORLD_READ
-         DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE 
-                               GROUP_READ 
+         DIRECTORY_PERMISSIONS OWNER_READ OWNER_WRITE
+                               GROUP_READ
                                WORLD_READ
          FILES_MATCHING REGEX ".*\.h[+][+]$|.*\.hxx$|.*\.hpp$|.*\.hh$|.*\.h$"  )
 
                     INCLUDE(CPack)
-                    
