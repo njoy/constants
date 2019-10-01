@@ -1,10 +1,16 @@
-#include <iostream>
-#include <map>
-#include <string>
-#include <cctype>
-#include <range/v3/all.hpp>
+#define CATCH_CONFIG_MAIN
+
+#include <fstream>
+#include <typeinfo>
+
+#include "catch.hpp"
+
+#include "constants.hpp"
+#include "constants/CODATA2014.hpp"
+#include "constants/testing.hpp"
 
 using namespace njoy::constants;
+using namespace dimwits;
 
 auto stringFor = hana::make_map(
   hana::make_pair( avogadro, std::string{ "Avogadro constant" } ),
@@ -36,37 +42,50 @@ auto stringFor = hana::make_map(
   hana::make_pair( alphaMass, std::string{ "alpha particle mass" } )
 );
 
-auto toValue = []( auto& line, int begin, int end ){
-  auto v = ranges::to_< std::string >( 
-    line 
-      | ranges::view::slice( begin, end )
-      | ranges::view::adjacent_remove_if( []( auto&& e1, auto&& e2 ){ 
-        return (e1 == '.') and ( (e2 == '.') or ( std::isspace( e2 ) ) ); } )
-      | ranges::view::filter( [](auto&& e ){ return not std::isspace( e ); } )
-    );
-  return v == "(exact)" ? 0.0 :  std::stod( v ); 
-};
+template< typename MAP >
+void checkMap( MAP& map ){
+  auto referenceValues = 
+      testing::defineReferenceValues( std::ifstream("CODATA2014.txt") );
 
-auto split = []( auto line ){
-  auto key = ranges::to_< std::string >( 
-    line 
-      | ranges::view::slice( 0, 60 )
-      | ranges::view::reverse
-      | ranges::view::drop_while( []( auto&& e ){ return std::isspace( e ); } )
-      | ranges::view::reverse
+  hana::for_each( hana::keys( map ), [&]( auto&& key ){
+    auto refKey = stringFor[ key ];
+
+    GIVEN( "constant: " + refKey ){
+      auto reference = referenceValues[ refKey ];
+
+      // Hiding our shame
+      auto verifyIfExists = [&](auto key) {
+        return hana::overload(
+          []( hana::true_ ){ return true; },
+          [&]( auto value ){ return reference.second == value.value; } 
+        )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
+      };
+      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 5E-10 );
+      CHECK( verifyIfExists( key ) );
+    }
+  });
+}
+
+SCENARIO("test all the constants"){
+
+  checkMap( CODATA2014 );
+
+  auto aliasMap = addUncertainty(
+    hana::make_map(
+      hana::make_pair( k, CODATA2014[ k ] ),
+      hana::make_pair( h, CODATA2014[ h ] ),
+      hana::make_pair( G, CODATA2014[ G ] ),
+      hana::make_pair( c, CODATA2014[ c ] )
+    ),
+
+    // Uncertainties
+    hana::make_map(
+      hana::make_pair( k, CODATA2014.uncertainty[ k ] ),
+      hana::make_pair( h, CODATA2014.uncertainty[ h ] ),
+      hana::make_pair( G, CODATA2014.uncertainty[ G ] ),
+      hana::make_pair( c, CODATA2014.uncertainty[ c ] )
+    )
   );
-  auto value = toValue( line, 60, 85 );
-  auto uncert = toValue( line, 85, 110 );
 
-  return std::make_pair( key, std::make_pair( value, uncert ) );
-};
-
-auto defineReferenceValues( std::istream&& is ){
-  auto result = ranges::getlines( is )
-    | ranges::view::drop( 10 )
-    | ranges::view::transform( split )
-    | ranges::to_vector;
-
-  return ranges::to_< 
-    std::map< std::string, std::pair< double, double > > >( result );
+  checkMap( aliasMap );
 }

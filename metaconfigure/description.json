@@ -574,13 +574,17 @@
   },
   "header files": [
     "src/constants.hpp",
+    "src/constants/testing.hpp",
     "src/constants/CODATA2014.hpp",
-    "src/constants/derived.hpp",
     "src/constants/map.hpp",
+    "src/constants/derived.hpp",
     "src/constants/math.hpp",
     "src/constants/tags.hpp",
+    "src/constants/CODATA2018.hpp",
     "src/constants/derived/Insert.hpp",
     "src/constants/derived/ReducedPlanck.hpp",
+    "src/constants/testing/src/defineReferenceValues.hpp",
+    "src/constants/testing/src/toValue.hpp",
     "src/constants/src/addUncertainty.hpp"
   ],
   "ignore pattern": "$^",
@@ -599,10 +603,14 @@
   "strict": true,
   "test pattern": "test$",
   "tests": {
-    "constants": [
-      "src/constants/test/CODATA2014.test.cpp",
-      "src/constants/test/constants.test.cpp",
-      "src/constants/test/math.test.cpp"
+    "constants.CODATA2014": [
+      "src/constants/CODATA2014/test/CODATA2014.test.cpp"
+    ],
+    "constants.CODATA2018": [
+      "src/constants/CODATA2018/test/CODATA2018.test.cpp"
+    ],
+    "constants.math": [
+      "src/constants/math/test/math.test.cpp"
     ]
   },
   "update": true
