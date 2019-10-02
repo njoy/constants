@@ -27,6 +27,7 @@ auto stringFor = hana::make_map(
   hana::make_pair( newtonianGravitation,
                    std::string{ "Newtonian constant of gravitation" } ),
   hana::make_pair( planck, std::string{ "Planck constant" } ),
+  hana::make_pair( reducedPlanck, std::string{ "Planck constant over 2 pi" } ),
   hana::make_pair( hbar, std::string{ "Planck constant over 2 pi" } ),
   hana::make_pair( rydberg, std::string{ "Rydberg constant" } ),
   hana::make_pair( speedOfLight, std::string{ "speed of light in vacuum" } ),
@@ -61,7 +62,7 @@ void checkMap( MAP& map ){
           [&]( auto value ){ return reference.second == value.value; }
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
-      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 5E-10 );
+      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
       CHECK( verifyIfExists( key ) );
     }
   });
@@ -75,6 +76,7 @@ SCENARIO("test all the constants"){
     hana::make_map(
       hana::make_pair( k, CODATA2014[ k ] ),
       hana::make_pair( h, CODATA2014[ h ] ),
+      hana::make_pair( hbar, CODATA2014[ hbar ] ),
       hana::make_pair( G, CODATA2014[ G ] ),
       hana::make_pair( c, CODATA2014[ c ] )
     ),
@@ -83,6 +85,7 @@ SCENARIO("test all the constants"){
     hana::make_map(
       hana::make_pair( k, CODATA2014.uncertainty[ k ] ),
       hana::make_pair( h, CODATA2014.uncertainty[ h ] ),
+      hana::make_pair( hbar, CODATA2014.uncertainty[ hbar ] ),
       hana::make_pair( G, CODATA2014.uncertainty[ G ] ),
       hana::make_pair( c, CODATA2014.uncertainty[ c ] )
     )
