@@ -63,16 +63,8 @@ void checkMap( MAP& map ){
           [&]( auto value ){ return reference.second == value.value; }
         )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
       };
-      auto verifyMatchingUnits = [&](auto key, auto units) {
-        return hana::overload(
-          []( hana::true_ ){ return true; },
-          [&]( auto value ){ return value.units() == units; }
-        )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
-      };
       CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
       CHECK( verifyIfExists( key ) );
-      (void)verifyMatchingUnits; // FIXME silence "unused variable" warning
-      // CHECK( verifyMatchingUnits( key, map[ key ].units() ) );
     }
   });
 }
