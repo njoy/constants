@@ -66,6 +66,8 @@ The raw data for this is contained in [CODATA2018.txt](src/constants/CODATA2018/
   | Newtonian constant of gravitation | `newtonianGravity`    | 6.674 08 e-11         | 0.000 31 e-11       | m^3 kg^-1 s^-2 | 
   | Planck constant                   | `planck`              | 6.626 070 15 e-34     | 0.0                 | J s            | 
   | Planck constant                   | `h`                   | 6.626 070 15 e-34     | 0.0                 | J s            | 
+  | Planck constant over 2 pi         | `reducedPlanck`       | 1.054 571 817 e-34    | 0.0                  | J s            | 
+  | Planck constant over 2 pi         | `hbar`                | 1.054 571 817 e-34    | 0.0                  | J s            | 
   | Rydberg constant                  | `rydberg`             | 10 973 731.568 160    | 0.000 021           | m^-1           | 
   | Speed of light in a vacuum        | `c`                   | 299 792 458           | 0.0                 | m s^-1         | 
   | Speed of light in a vacuum        | `speedOfLight`        | 299 792 458           | 0.0                 | m s^-1         | 
