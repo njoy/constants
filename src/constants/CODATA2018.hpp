@@ -36,7 +36,7 @@ static constexpr auto CODATA2018 = addUncertainty(
     hana::make_pair( helionMass   , 5.0064127796e-27*kilo( gram ) ),
     hana::make_pair( tritonMass   , 5.0073567446e-27*kilo( gram ) ),
     hana::make_pair( alphaMass    , 6.6446573357e-27*kilo( gram ) )
-  ), 
+  ),
   // Uncertainties
   hana::make_map(
     hana::make_pair( avogadro     , 0.0/mole ),
@@ -70,6 +70,6 @@ static constexpr auto CODATA2018 = addUncertainty(
   )
 );
 
-}
-}
+} // namespace constants
+} // namespace njoy
 #endif // NJOY_CONSTANTS_CODATA2018_HPP
