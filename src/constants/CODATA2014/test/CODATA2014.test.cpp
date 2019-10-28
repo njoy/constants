@@ -49,23 +49,53 @@ void checkMap( MAP& map ){
   auto referenceValues = 
       testing::defineReferenceValues( std::ifstream("CODATA2014.txt") );
 
-  hana::for_each( hana::keys( map ), [&]( auto&& key ){
-    auto refKey = stringFor[ key ];
+  hana::for_each( hana::keys( map ),
+    [&]( const auto& key ){
+      auto refKey = stringFor[ key ];
 
-    GIVEN( "constant: " + refKey ){
-      auto reference = referenceValues[ refKey ];
-
-      // Hiding our shame
-      auto verifyIfExists = [&](auto key) {
-        return hana::overload(
-          []( hana::true_ ){ return true; },
-          [&]( auto value ){ return reference.second == value.value; } 
-        )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
-      };
-      CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
-      CHECK( verifyIfExists( key ) );
+      GIVEN( "constant: " + refKey ){
+        auto reference = referenceValues[ refKey ];
+  
+        // Hiding our shame
+        auto verifyIfExists = [&](auto key) {
+          return hana::overload(
+            []( hana::true_ ){ return true; },
+            [&]( auto value ){ return reference.second == value.value; } 
+          )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
+        };
+        CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
+        CHECK( verifyIfExists( key ) );
+      }
     }
-  });
+  );
+
+  /*
+  hana::for_each( hana::keys( map ), 
+    [&]( auto&& key ){
+      auto refKey = stringFor[ key ];
+  
+      GIVEN( "constant: " + refKey ){
+        auto reference = referenceValues[ refKey ];
+        CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
+        // CHECK( reference.second == map.uncertainty[ key ].value );
+      } // GIVEN
+  
+      // GIVEN( "constant: " + refKey ){
+      //   auto reference = referenceValues[ refKey ];
+  
+      //   // Hiding our shame
+      //   auto verifyIfExists = [&](auto key) {
+      //     return hana::overload(
+      //       []( hana::true_ ){ return true; },
+      //       [&]( auto value ){ return reference.second == value.value; } 
+      //     )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
+      //   };
+      //   CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
+      //   CHECK( verifyIfExists( key ) );
+      // }
+    }
+  );
+   */
 }
 
 SCENARIO("test all the constants"){

@@ -8,4 +8,4 @@ decltype( auto ) toValue( L&& line, int begin, int end ){
       | ranges::view::filter( [](auto&& e ){ return not std::isspace( e ); } )
     );
   return v == "(exact)" ? 0.0 :  std::stod( v ); 
-};
+}
