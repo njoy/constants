@@ -27,12 +27,10 @@ auto stringFor = hana::make_map(
   hana::make_pair( newtonianGravitation, 
                    std::string{ "Newtonian constant of gravitation" } ),
   hana::make_pair( planck, std::string{ "Planck constant" } ),
-  hana::make_pair( reducedPlanck, std::string{ "Planck constant over 2 pi" } ),
   hana::make_pair( hbar, std::string{ "Planck constant over 2 pi" } ),
   hana::make_pair( rydberg, std::string{ "Rydberg constant" } ),
   hana::make_pair( speedOfLight, std::string{ "speed of light in vacuum" } ),
-  hana::make_pair( stefanBoltzmann, 
-                   std::string{ "Stefan-Boltzmann constant" } ),
+  hana::make_pair( stefanBoltzmann, std::string{ "Stefan-Boltzmann constant" } ),
 
   // Masses
   hana::make_pair( electronMass, std::string{ "electron mass" } ),
@@ -49,13 +47,12 @@ void checkMap( MAP& map ){
   auto referenceValues = 
       testing::defineReferenceValues( std::ifstream("CODATA2014.txt") );
 
-  hana::for_each( hana::keys( map ),
-    [&]( const auto& key ){
+  hana::for_each( hana::keys( map ), 
+    [&]( auto&& key ){
       auto refKey = stringFor[ key ];
 
       GIVEN( "constant: " + refKey ){
         auto reference = referenceValues[ refKey ];
-  
         // Hiding our shame
         auto verifyIfExists = [&](auto key) {
           return hana::overload(
@@ -63,39 +60,11 @@ void checkMap( MAP& map ){
             [&]( auto value ){ return reference.second == value.value; } 
           )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
         };
-        CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
+        CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 5E-10 );
         CHECK( verifyIfExists( key ) );
-      }
-    }
-  );
-
-  /*
-  hana::for_each( hana::keys( map ), 
-    [&]( auto&& key ){
-      auto refKey = stringFor[ key ];
-  
-      GIVEN( "constant: " + refKey ){
-        auto reference = referenceValues[ refKey ];
-        CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
-        // CHECK( reference.second == map.uncertainty[ key ].value );
       } // GIVEN
-  
-      // GIVEN( "constant: " + refKey ){
-      //   auto reference = referenceValues[ refKey ];
-  
-      //   // Hiding our shame
-      //   auto verifyIfExists = [&](auto key) {
-      //     return hana::overload(
-      //       []( hana::true_ ){ return true; },
-      //       [&]( auto value ){ return reference.second == value.value; } 
-      //     )( hana::find( map.uncertainty, key ).value_or( hana::true_c ) );
-      //   };
-      //   CHECK( fabs( 1 - (reference.first/map[ key ].value ) ) < 1E-10 );
-      //   CHECK( verifyIfExists( key ) );
-      // }
     }
   );
-   */
 }
 
 SCENARIO("test all the constants"){
