@@ -16,7 +16,7 @@ static constexpr auto CODATA2014 = addUncertainty(
     hana::make_pair( elementaryCharge, 1.6021766208e-19*coulomb ),
     hana::make_pair( faraday, 9.648533289e4*coulomb/mole ),
     hana::make_pair( fineStructure, 7.2973525664e-3*meter/meter ),
-    hana::make_pair( magnetic, 12.566370614e-7*newton/ampere/ampere ),
+    hana::make_pair( magnetic, 1.2566370614e-6*newton/ampere/ampere ),
     hana::make_pair( magneticFluxQuantum, 2.067833831e-15*weber ),
     hana::make_pair( molarGas, 8.3144598*joule/mole/kelvin ),
     hana::make_pair( newtonianGravitation, 
@@ -41,12 +41,12 @@ static constexpr auto CODATA2014 = addUncertainty(
   hana::make_map(
     hana::make_pair( avogadro     , 0.000000074e23/mole ),
     hana::make_pair( boltzmann    , 0.00000079e-23*joule/kelvin ),
+    hana::make_pair( conductanceQuantum, 1.8E-14*siemens ),
     hana::make_pair( electric, 0.0*farad/meter ),
     hana::make_pair( electronRadius, 1.9e-24*meter ),
     hana::make_pair( elementaryCharge, 0.0000000098e-19*coulomb ),
     hana::make_pair( faraday, 5.9e-4*coulomb/mole ),
     hana::make_pair( fineStructure, 1.7e-12*meter/meter ),
-    hana::make_pair( conductanceQuantum, 1.8E-14*siemens ),
     hana::make_pair( magnetic, 0.0*newton/ampere/ampere ),
     hana::make_pair( magneticFluxQuantum, 1.3e-23*weber ),
     hana::make_pair( molarGas, 4.8e-6*joule/mole/kelvin ),
@@ -70,6 +70,6 @@ static constexpr auto CODATA2014 = addUncertainty(
   )
 );
 
-}
-}
+} // namespace constants
+} // namespace njoy
 #endif // NJOY_CONSTANTS_CODATA2014_HPP
