@@ -4,7 +4,6 @@
 #include "boost/hana.hpp"
 #include "dimwits.hpp"
 
-// using namespace boost;
 using namespace dimwits;
 
 namespace njoy {
