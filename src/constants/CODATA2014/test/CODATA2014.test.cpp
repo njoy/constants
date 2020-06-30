@@ -42,11 +42,12 @@ auto stringFor = hana::make_map(
   hana::make_pair( alphaMass, std::string{ "alpha particle mass" } )
 );
 
-void checkMap( Map_t& map ){
+template< typename MAP >
+void checkMap( MAP& map ){
   auto referenceValues = 
       testing::defineReferenceValues( std::ifstream("CODATA2014.txt") );
 
-  hana::for_each( hana::keys( map ), 
+  hana::for_each( hana::keys( map.value ), 
     [&]( auto&& key ){
       auto refKey = stringFor[ key ];
 

@@ -6,7 +6,7 @@
 namespace njoy {
 namespace constants {
 
-constexpr auto values = hana::make_map(
+static constexpr auto values = hana::make_map(
   hana::make_pair( avogadro     , 6.022140857e23/mole ),
   hana::make_pair( boltzmann    , 1.38064852e-23*joule/kelvin ),
   hana::make_pair( conductanceQuantum, 7.7480917310e-5*siemens ),
@@ -37,7 +37,7 @@ constexpr auto values = hana::make_map(
   hana::make_pair( alphaMass    , 6.644657230e-27*kilo( gram ) )
 );
   // Uncertainties
-constexpr auto uncertainties = hana::make_map(
+static constexpr auto uncertainties = hana::make_map(
   hana::make_pair( avogadro     , 0.000000074e23/mole ),
   hana::make_pair( boltzmann    , 0.00000079e-23*joule/kelvin ),
   hana::make_pair( conductanceQuantum, 1.8E-14*siemens ),
