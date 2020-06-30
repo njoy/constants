@@ -1,4 +1,4 @@
-[![Build Status](http://jenkins.njoy21.io:8080/buildStatus/icon?job=constants)](http://jenkins.njoy21.io:8080/job/constants/)
+![Continuous Integration](https://github.com/njoy/constants/workflows/Continuous%20Integration/badge.svg)
 
 # constants
 This repository contains a collection of mathematical and physical constants. Additional information about the constants provided&mdash;and their values&mdash; see the associated README files.
