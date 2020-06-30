@@ -5,11 +5,13 @@
 cmake_minimum_required( VERSION 3.16 )
 project( constants LANGUAGES CXX )
 
+
 ########################################################################
 # Dependencies
 ########################################################################
 
 include( cmake/constants_dependencies.cmake )
+
 
 ########################################################################
 # Project targets

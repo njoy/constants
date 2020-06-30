@@ -47,7 +47,7 @@ void checkMap( MAP& map ){
   auto referenceValues = 
       testing::defineReferenceValues( std::ifstream("CODATA2014.txt") );
 
-  hana::for_each( hana::keys( map ), 
+  hana::for_each( hana::keys( map.value ), 
     [&]( auto&& key ){
       auto refKey = stringFor[ key ];
 
@@ -64,7 +64,7 @@ SCENARIO("test all the constants"){
 
   checkMap( CODATA2014 );
 
-  auto aliasMap = addUncertainty(
+  auto aliasMap = Map_t(
     hana::make_map(
       hana::make_pair( k, CODATA2014[ k ] ),
       hana::make_pair( h, CODATA2014[ h ] ),
