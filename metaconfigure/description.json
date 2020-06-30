@@ -596,8 +596,7 @@
     "src/constants/tags.hpp",
     "src/constants/CODATA2018.hpp",
     "src/constants/testing/src/defineReferenceValues.hpp",
-    "src/constants/testing/src/toValue.hpp",
-    "src/constants/src/addUncertainty.hpp"
+    "src/constants/testing/src/toValue.hpp"
   ],
   "ignore pattern": "$^",
   "implementation files": [],
