@@ -68,7 +68,8 @@ constexpr auto uncertainties = hana::make_map(
   hana::make_pair( alphaMass    , 0.000000082e-27*kilo( gram ) )
   );
 
-static constexpr auto CODATA2014 = map( values, uncertainties );
+static constexpr auto CODATA2014 = Map_t( values, uncertainties );
+
 } // namespace constants
 } // namespace njoy
 #endif // NJOY_CONSTANTS_CODATA2014_HPP
