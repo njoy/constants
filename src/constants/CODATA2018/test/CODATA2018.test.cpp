@@ -83,5 +83,5 @@ SCENARIO("test all the constants"){
     )
   );
 
-  // checkMap( aliasMap );
+  checkMap( aliasMap );
 }
